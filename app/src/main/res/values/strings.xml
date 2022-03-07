@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">SzokerMobil</string>
+    <string name="loginTextview">Belépés</string>
+    <string name="login_button">Belépés</string>
+    <string name="loginfelhasznalo">Felhasználó</string>
+    <string name="loginJelszo">Jelszó</string>
 </resources>
