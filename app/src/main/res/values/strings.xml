@@ -3,4 +3,9 @@
     <string name="szolgkeresLB">Szolgáltatás Kereső</string>
     <string name="reg">Button</string>
     <string name="login">Button</string>
+
+    <string name="loginTextview">Belépés</string>
+    <string name="login_button">Belépés</string>
+    <string name="loginfelhasznalo">Felhasználó</string>
+    <string name="loginJelszo">Jelszó</string>
 </resources>
