@@ -21,10 +21,9 @@ public class Login extends AppCompatActivity {
     Button Loginbutton;
 
     @Override
-    protected  void  onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
-
 
 
         editTextTextLoginFelhasznalo = findViewById(R.id.usernameLogin);
@@ -40,7 +39,7 @@ public class Login extends AppCompatActivity {
                 String username, password;
                 username = String.valueOf(editTextTextLoginFelhasznalo.getText());
                 password = String.valueOf(editTextTextloginpassword.getText());
-                if (username.equals("") && !password.equals("")){
+                if (username.equals("") && !password.equals("")) {
                     progressBar.setVisibility(View.VISIBLE);
                     Handler handler = new Handler(Looper.getMainLooper());
                     handler.post(new Runnable() {
@@ -55,47 +54,32 @@ public class Login extends AppCompatActivity {
                             data[1] = password;
 
                             PutData putData = new PutData("http://10.0.11.200/reglog/login.php", "POST", field, data);
-                            if (putData.startPut()){
-                                if (putData.onComplete()){
+                            if (putData.startPut()) {
+                                if (putData.onComplete()) {
                                     progressBar.setVisibility(View.GONE);
                                     String result = putData.getResult();
-                                    if (result.equals("Login Success")){
+                                    if (result.equals("Login Success")) {
                                         Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                                         startActivity(intent);
                                         finish();
 
-                                    }else{
-                                        Toast.makeText(getApplicationContext(),result, Toast.LENGTH_SHORT).show();
+                                    } else {
+                                        Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
                                     }
                                     Log.i("PutData", result);
                                 }
                             }
                         }
                     });
-                }
-                else {
+                } else {
                     Toast.makeText(getApplicationContext(), "All fields required!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
 
 
-
-
-
-
-
-
-
-
-
-
     }
-
-
-
-
 
 
 }
