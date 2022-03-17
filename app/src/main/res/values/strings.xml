@@ -10,4 +10,11 @@
     <string name="loginJelszo">Jelszó</string>
     <string name="regisztralas">Regisztrálok</string>
     <string name="bejelentkezes">Bejelentkezek</string>
+    <string name="register">Regisztrálás</string>
+    <string name="fullname">Teljes név</string>
+    <string name="email">email</string>
+    <string name="username">Jelszó</string>
+    <string name="telszam">Telefonszám</string>
+    <string name="register_textview">Regisztrálás</string>
+    <string name="Lakcím">Lakcím</string>
 </resources>
