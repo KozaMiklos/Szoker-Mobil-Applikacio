@@ -8,4 +8,6 @@
     <string name="login_button">Belépés</string>
     <string name="loginfelhasznalo">Felhasználó</string>
     <string name="loginJelszo">Jelszó</string>
+    <string name="regisztralas">Regisztrálok</string>
+    <string name="bejelentkezes">Bejelentkezek</string>
 </resources>
