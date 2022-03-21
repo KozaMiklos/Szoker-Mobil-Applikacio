@@ -11,4 +11,9 @@
     <string name="regisztralas">Regisztrálok</string>
     <string name="bejelentkezes">Bejelentkezek</string>
     <string name="welcomeText">Üdvözöljük a szolgáltatás keresőben! Kérem válasszon az alábbi opciók közül:</string>
+    <string name="register">Regisztráció</string>
+    <string name="fullname">Név</string>
+    <string name="email">E-mail</string>
+    <string name="password">Jelszó</string>
+    <string name="username">Felhasználónév</string>
 </resources>
