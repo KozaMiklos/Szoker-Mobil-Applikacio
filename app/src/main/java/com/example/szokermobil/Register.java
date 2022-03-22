@@ -20,7 +20,6 @@ public class Register extends AppCompatActivity {
 
     TextInputEditText textInputEditTextFullname, textInputEditTextUsername, textInputEditTextPassword, textInputEditTextEmail;
     Button registerButton;
-    TextView textViewLogin;
     ProgressBar progressBar;
 
 
@@ -36,14 +35,7 @@ public class Register extends AppCompatActivity {
         registerButton = findViewById(R.id.registerButton);
         progressBar = findViewById(R.id.progress);
 
-        textViewLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Login.class);
-                startActivity(intent);
-                finish();
-            }
-        });
+
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,7 +64,7 @@ public class Register extends AppCompatActivity {
                             data[2] = password;
                             data[3] = email;
                             //PutData putData = new PutData("http://localhost/registerlogin/signup.php", "POST", field, data);
-                            PutData putData = new PutData("http://10.0.11.200/reglog/signup.php", "POST", field, data);
+                            PutData putData = new PutData("http://10.0.11.114/reglog/signup.php", "POST", field, data);
                             if (putData.startPut()) {
                                 if (putData.onComplete()) {
                                     progressBar.setVisibility(View.GONE);
