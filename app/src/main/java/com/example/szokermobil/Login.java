@@ -16,7 +16,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
 public class Login extends AppCompatActivity {
-    TextInputEditText editTextTextLoginFelhasznalo, editTextTextloginpassword;
+    TextInputEditText editTextTextLoginFelhasznalo, editTextTextloginPassword;
     ProgressBar progressBar;
     Button Loginbutton;
 
@@ -27,18 +27,16 @@ public class Login extends AppCompatActivity {
 
 
         editTextTextLoginFelhasznalo = findViewById(R.id.usernameLogin);
-        editTextTextloginpassword = findViewById(R.id.passwordLogin);
+        editTextTextloginPassword = findViewById(R.id.passwordLogin);
         Loginbutton = findViewById(R.id.Loginbutton);
         progressBar = findViewById(R.id.progressBar);
-        Loginbutton = findViewById(R.id.Loginbutton);
-
 
         Loginbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String username, password;
                 username = String.valueOf(editTextTextLoginFelhasznalo.getText());
-                password = String.valueOf(editTextTextloginpassword.getText());
+                password = String.valueOf(editTextTextloginPassword.getText());
                 if (username.equals("") && !password.equals("")) {
                     progressBar.setVisibility(View.VISIBLE);
                     Handler handler = new Handler(Looper.getMainLooper());
@@ -53,7 +51,7 @@ public class Login extends AppCompatActivity {
                             data[0] = username;
                             data[1] = password;
 
-                            PutData putData = new PutData("http://10.0.11.200/reglog/login.php", "POST", field, data);
+                            PutData putData = new PutData("http://10.0.11.114/reglog/login.php", "POST", field, data);
                             if (putData.startPut()) {
                                 if (putData.onComplete()) {
                                     progressBar.setVisibility(View.GONE);
