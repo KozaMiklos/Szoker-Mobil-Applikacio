@@ -51,7 +51,7 @@ public class Login extends AppCompatActivity {
                             data[0] = email;
                             data[1] = password;
 
-                            PutData putData = new PutData("http://10.0.11.114/reglog/login.php", "POST", field, data);
+                            PutData putData = new PutData("http://10.0.11.115/reglog/login.php", "POST", field, data);
                             if (putData.startPut()) {
                                 if (putData.onComplete()) {
                                     progressBar.setVisibility(View.GONE);
@@ -61,7 +61,7 @@ public class Login extends AppCompatActivity {
                                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                                         startActivity(intent);
                                         finish();
-
+//csak hogy engedjen pussholni
                                     } else {
                                         Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
                                     }
