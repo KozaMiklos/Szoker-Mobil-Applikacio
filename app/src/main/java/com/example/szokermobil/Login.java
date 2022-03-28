@@ -26,7 +26,7 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.login);
 
 
-        editTextTextLoginEmail = findViewById(R.id.usernameLogin);
+        editTextTextLoginEmail = findViewById(R.id.emailLogin);
         editTextTextloginPassword = findViewById(R.id.passwordLogin);
         Loginbutton = findViewById(R.id.Loginbutton);
         progressBar = findViewById(R.id.progressBar);
@@ -34,21 +34,21 @@ public class Login extends AppCompatActivity {
         Loginbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String username, password;
-                username = String.valueOf(editTextTextLoginEmail.getText());
+                String email, password;
+                email = String.valueOf(editTextTextLoginEmail.getText());
                 password = String.valueOf(editTextTextloginPassword.getText());
-                if (!username.equals("") && !password.equals("")) {
+                if (!email.equals("") && !password.equals("")) {
                     progressBar.setVisibility(View.VISIBLE);
                     Handler handler = new Handler(Looper.getMainLooper());
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
                             String[] field = new String[2];
-                            field[0] = "username";
+                            field[0] = "email";
                             field[1] = "password";
 
                             String[] data = new String[2];
-                            data[0] = username;
+                            data[0] = email;
                             data[1] = password;
 
                             PutData putData = new PutData("http://10.0.11.114/reglog/login.php", "POST", field, data);
