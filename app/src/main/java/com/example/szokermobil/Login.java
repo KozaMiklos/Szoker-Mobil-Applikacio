@@ -37,7 +37,7 @@ public class Login extends AppCompatActivity {
                 String username, password;
                 username = String.valueOf(editTextTextLoginFelhasznalo.getText());
                 password = String.valueOf(editTextTextloginPassword.getText());
-                if (username.equals("") && !password.equals("")) {
+                if (!username.equals("") && !password.equals("")) {
                     progressBar.setVisibility(View.VISIBLE);
                     Handler handler = new Handler(Looper.getMainLooper());
                     handler.post(new Runnable() {
