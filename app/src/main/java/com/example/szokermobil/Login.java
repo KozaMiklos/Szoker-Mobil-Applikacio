@@ -16,7 +16,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
 public class Login extends AppCompatActivity {
-    TextInputEditText editTextTextLoginFelhasznalo, editTextTextloginPassword;
+    TextInputEditText editTextTextLoginEmail, editTextTextloginPassword;
     ProgressBar progressBar;
     Button Loginbutton;
 
@@ -26,7 +26,7 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.login);
 
 
-        editTextTextLoginFelhasznalo = findViewById(R.id.usernameLogin);
+        editTextTextLoginEmail = findViewById(R.id.usernameLogin);
         editTextTextloginPassword = findViewById(R.id.passwordLogin);
         Loginbutton = findViewById(R.id.Loginbutton);
         progressBar = findViewById(R.id.progressBar);
@@ -35,7 +35,7 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String username, password;
-                username = String.valueOf(editTextTextLoginFelhasznalo.getText());
+                username = String.valueOf(editTextTextLoginEmail.getText());
                 password = String.valueOf(editTextTextloginPassword.getText());
                 if (!username.equals("") && !password.equals("")) {
                     progressBar.setVisibility(View.VISIBLE);

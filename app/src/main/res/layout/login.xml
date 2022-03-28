@@ -32,12 +32,12 @@
 
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/editTextTextLoginFelhasznalo"
+        android:id="@+id/editTextTextLoginEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:hint="@string/loginfelhasznalo"
+        android:hint="@string/loginEmail"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,7 +45,7 @@
         app:layout_constraintVertical_bias="0.20">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/usernameLogin"
+            android:id="@+id/emailLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:ignore="TextContrastCheck" />
