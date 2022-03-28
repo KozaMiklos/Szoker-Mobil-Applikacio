@@ -16,4 +16,5 @@
     <string name="email">E-mail</string>
     <string name="password">Jelszó</string>
     <string name="username">Felhasználónév</string>
+    <string name="szakmunkas_checkbox">Szakmunkásként regisztrálok</string>
 </resources>
