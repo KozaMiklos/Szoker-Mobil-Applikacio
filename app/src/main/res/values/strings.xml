@@ -4,7 +4,7 @@
     <string name="reg">Button</string>
     <string name="login">Button</string>
 
-    <string name="loginTextview">Belépés</string>
+    <string name="loginTextview">Szakmunkás belépési felület</string>
     <string name="login_button">Belépés</string>
     <string name="loginfelhasznalo">Felhasználó</string>
     <string name="loginJelszo">Jelszó</string>

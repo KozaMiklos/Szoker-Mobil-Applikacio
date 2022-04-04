@@ -7,6 +7,7 @@ import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -15,10 +16,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.textfield.TextInputEditText;
 import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
-public class Login extends AppCompatActivity {
+public class SzakmunkasLogin extends AppCompatActivity {
+
     TextInputEditText editTextTextLoginEmail, editTextTextloginPassword;
     ProgressBar progressBar;
     Button Loginbutton;
+    CheckBox SzakmunkasLoginCB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,28 +33,34 @@ public class Login extends AppCompatActivity {
         editTextTextloginPassword = findViewById(R.id.passwordLogin);
         Loginbutton = findViewById(R.id.Loginbutton);
         progressBar = findViewById(R.id.progressBar);
+        SzakmunkasLoginCB = findViewById(R.id.SzakmunkascheckBox);
+
 
         Loginbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String email, password;
+                String email, password, email2, password2;
                 email = String.valueOf(editTextTextLoginEmail.getText());
+                email2 = String.valueOf(editTextTextLoginEmail.getText());
                 password = String.valueOf(editTextTextloginPassword.getText());
-                if (!email.equals("") && !password.equals("")) {
+                password2 = String.valueOf(editTextTextloginPassword.getText());
+
+
+                if (!email2.equals("") && !password2.equals("")) {
                     progressBar.setVisibility(View.VISIBLE);
                     Handler handler = new Handler(Looper.getMainLooper());
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
                             String[] field = new String[2];
-                            field[0] = "email";
-                            field[1] = "password";
+                            field[0] = "email2";
+                            field[1] = "password2";
 
                             String[] data = new String[2];
-                            data[0] = email;
-                            data[1] = password;
+                            data[0] = email2;
+                            data[1] = password2;
 
-                            PutData putData = new PutData("http://10.0.11.115/reglog/login.php", "POST", field, data);
+                            PutData putData = new PutData("http://192.168.1.65/reglog/loginSzakmunkas.php", "POST", field, data);
                             if (putData.startPut()) {
                                 if (putData.onComplete()) {
                                     progressBar.setVisibility(View.GONE);
@@ -61,7 +70,7 @@ public class Login extends AppCompatActivity {
                                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                                         startActivity(intent);
                                         finish();
-//csak hogy engedjen pussholni
+
                                     } else {
                                         Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
                                     }
@@ -73,11 +82,9 @@ public class Login extends AppCompatActivity {
                 } else {
                     Toast.makeText(getApplicationContext(), "All fields required!", Toast.LENGTH_SHORT).show();
                 }
+
             }
         });
 
-
     }
-
-
 }
