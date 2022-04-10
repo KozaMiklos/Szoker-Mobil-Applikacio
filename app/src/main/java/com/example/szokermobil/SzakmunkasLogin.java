@@ -60,14 +60,14 @@ public class SzakmunkasLogin extends AppCompatActivity {
                             data[0] = email2;
                             data[1] = password2;
 
-                            PutData putData = new PutData("http://192.168.1.65/reglog/loginSzakmunkas.php", "POST", field, data);
+                            PutData putData = new PutData("http://10.0.11.114/reglog/loginSzakmunkas.php", "POST", field, data);
                             if (putData.startPut()) {
                                 if (putData.onComplete()) {
                                     progressBar.setVisibility(View.GONE);
                                     String result = putData.getResult();
                                     if (result.equals("Login Success")) {
                                         Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                        Intent intent = new Intent(getApplicationContext(), Szakmunkasok.class);
                                         startActivity(intent);
                                         finish();
 

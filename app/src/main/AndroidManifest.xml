@@ -38,6 +38,12 @@
         <activity android:name=".MegrendeloLogin"
             android:theme="@style/Theme.Design.Light.NoActionBar"/>
 
+        <activity android:name=".Megrendelok"
+            android:theme="@style/Theme.Design.Light.NoActionBar"/>
+
+        <activity android:name=".Szakmunkasok"
+            android:theme="@style/Theme.Design.Light.NoActionBar"/>
+
 
 
 

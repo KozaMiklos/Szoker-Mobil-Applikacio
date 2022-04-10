@@ -18,4 +18,6 @@
     <string name="username">Felhasználónév</string>
     <string name="szakmunkas_checkbox">Szakmunkásként regisztrálok</string>
     <string name="loginEmail">E-mail cím</string>
+    <string name="szakmunkasokTextView">Szakmunkások felülete</string>
+    <string name="megrendelokTextView">Megrendelők felülete</string>
 </resources>
