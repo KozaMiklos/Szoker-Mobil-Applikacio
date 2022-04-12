@@ -20,4 +20,6 @@
     <string name="loginEmail">E-mail cím</string>
     <string name="szakmunkasokTextView">Szakmunkások felülete</string>
     <string name="megrendelokTextView">Megrendelők felülete</string>
+    <string name="registor_lokacio">Lokáció</string>
+    <string name="register_telszam">Telefonszám</string>
 </resources>

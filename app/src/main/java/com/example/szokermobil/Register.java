@@ -73,7 +73,7 @@ public class Register extends AppCompatActivity {
                                 data[2] = password2;
                                 data[3] = email2;
                                 //PutData putData = new PutData("http://localhost/registerlogin/signup.php", "POST", field, data);
-                                PutData putData = new PutData("http://10.0.11.114/reglog/signupSzakmunkas.php", "POST", field, data);
+                                PutData putData = new PutData("http://192.168.50.196/reglog/signupSzakmunkas.php", "POST", field, data);
 
 
                                 if (putData.startPut()) {
@@ -119,7 +119,7 @@ public class Register extends AppCompatActivity {
                                 data[3] = email;
                                 //PutData putData = new PutData("http://localhost/registerlogin/signup.php", "POST", field, data);
 
-                                PutData putData = new PutData("http://10.0.11.114/reglog/signup.php", "POST", field, data);
+                                PutData putData = new PutData("http://192.168.50.196/reglog/signup.php", "POST", field, data);
 
 
                                 if (putData.startPut()) {
