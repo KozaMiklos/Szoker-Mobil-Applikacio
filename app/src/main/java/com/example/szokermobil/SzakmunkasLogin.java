@@ -39,10 +39,9 @@ public class SzakmunkasLogin extends AppCompatActivity {
         Loginbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String email, password, email2, password2;
-                email = String.valueOf(editTextTextLoginEmail.getText());
+                String email2, password2;
+
                 email2 = String.valueOf(editTextTextLoginEmail.getText());
-                password = String.valueOf(editTextTextloginPassword.getText());
                 password2 = String.valueOf(editTextTextloginPassword.getText());
 
 

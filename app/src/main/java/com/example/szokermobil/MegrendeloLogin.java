@@ -26,7 +26,7 @@ public class MegrendeloLogin extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.megrendelologin);
+        setContentView(R.layout.login);
 
 
         editTextTextLoginEmail = findViewById(R.id.emailLogin);
@@ -36,55 +36,37 @@ public class MegrendeloLogin extends AppCompatActivity {
         SzakmunkasLoginCB = findViewById(R.id.SzakmunkascheckBox);
 
 
-
         Loginbutton.setOnClickListener(new View.OnClickListener() {
-
-
             @Override
             public void onClick(View view) {
-<<<<<<<<< Temporary merge branch 1:app/src/main/java/com/example/szokermobil/Login.java
-                String email, password, email2, password2;
-=========
-                String email, password ;
->>>>>>>>> Temporary merge branch 2:app/src/main/java/com/example/szokermobil/MegrendeloLogin.java
-                email = String.valueOf(editTextTextLoginEmail.getText());
-                email2 = String.valueOf(editTextTextLoginEmail.getText());
-                password = String.valueOf(editTextTextloginPassword.getText());
-<<<<<<<<< Temporary merge branch 1:app/src/main/java/com/example/szokermobil/Login.java
-                password2 = String.valueOf(editTextTextloginPassword.getText());
+                String email, password;
 
-                if(SzakmunkasLoginCB.isChecked()){
-                if (!email2.equals("") && !password2.equals("")) {
-=========
+                email = String.valueOf(editTextTextLoginEmail.getText());
+                password = String.valueOf(editTextTextloginPassword.getText());
 
 
                 if (!email.equals("") && !password.equals("")) {
->>>>>>>>> Temporary merge branch 2:app/src/main/java/com/example/szokermobil/MegrendeloLogin.java
                     progressBar.setVisibility(View.VISIBLE);
                     Handler handler = new Handler(Looper.getMainLooper());
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
                             String[] field = new String[2];
-                            field[0] = "email2";
-                            field[1] = "password2";
+                            field[0] = "email";
+                            field[1] = "password";
 
                             String[] data = new String[2];
-                            data[0] = email2;
-                            data[1] = password2;
+                            data[0] = email;
+                            data[1] = password;
 
-<<<<<<<<< Temporary merge branch 1:app/src/main/java/com/example/szokermobil/Login.java
-                            PutData putData = new PutData("http://10.0.11.114/reglog/loginSzakmunkas.php", "POST", field, data);
-=========
-                            PutData putData = new PutData("http://192.168.1.65/reglog/login.php", "POST", field, data);
->>>>>>>>> Temporary merge branch 2:app/src/main/java/com/example/szokermobil/MegrendeloLogin.java
+                            PutData putData = new PutData("http://10.0.11.114/reglog/login.php", "POST", field, data);
                             if (putData.startPut()) {
                                 if (putData.onComplete()) {
                                     progressBar.setVisibility(View.GONE);
                                     String result = putData.getResult();
                                     if (result.equals("Login Success")) {
                                         Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                        Intent intent = new Intent(getApplicationContext(), Megrendelok.class);
                                         startActivity(intent);
                                         finish();
 
@@ -99,63 +81,9 @@ public class MegrendeloLogin extends AppCompatActivity {
                 } else {
                     Toast.makeText(getApplicationContext(), "All fields required!", Toast.LENGTH_SHORT).show();
                 }
-<<<<<<<<< Temporary merge branch 1:app/src/main/java/com/example/szokermobil/Login.java
-
-            }else{
-
-                    if (!email.equals("") && !password.equals("")) {
-                        progressBar.setVisibility(View.VISIBLE);
-                        Handler handler = new Handler(Looper.getMainLooper());
-                        handler.post(new Runnable() {
-                            @Override
-                            public void run() {
-                                String[] field = new String[2];
-                                field[0] = "email";
-                                field[1] = "password";
-
-                                String[] data = new String[2];
-                                data[0] = email;
-                                data[1] = password;
-
-                                PutData putData = new PutData("http://10.0.11.114/reglog/login.php", "POST", field, data);
-                                if (putData.startPut()) {
-                                    if (putData.onComplete()) {
-                                        progressBar.setVisibility(View.GONE);
-                                        String result = putData.getResult();
-                                        if (result.equals("Login Success")) {
-                                            Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
-                                            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                                            startActivity(intent);
-                                            finish();
-
-                                        } else {
-                                            Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
-                                        }
-                                        Log.i("PutData", result);
-                                    }
-                                }
-                            }
-                        });
-                    } else {
-                        Toast.makeText(getApplicationContext(), "All fields required!", Toast.LENGTH_SHORT).show();
-                    }
-
-
-                }
-
-        }
-
-
-    });
-
-
-}
-}
-=========
 
             }
         });
 
     }
 }
->>>>>>>>> Temporary merge branch 2:app/src/main/java/com/example/szokermobil/MegrendeloLogin.java
