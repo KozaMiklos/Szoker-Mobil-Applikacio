@@ -23,10 +23,10 @@
             tools:ignore="NotSibling">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/fullname"
+                android:id="@+id/nev"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:ignore="TextContrastCheck"
+                tools:ignore="TextContrastCheck,TouchTargetSizeCheck,TouchTargetSizeCheck"
                 tools:targetApi="jelly_bean" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -46,7 +46,7 @@
                 android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:ignore="TextContrastCheck"
+                tools:ignore="TextContrastCheck,TouchTargetSizeCheck"
                 tools:targetApi="jelly_bean" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -66,12 +66,12 @@
                 android:id="@+id/lokacio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:ignore="TextContrastCheck"
+                tools:ignore="TextContrastCheck,TouchTargetSizeCheck"
                 tools:targetApi="jelly_bean" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayoutPassword"
+            android:id="@+id/textInputLayoutJelszo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
@@ -81,10 +81,10 @@
             tools:layout_editor_absoluteX="0dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/password"
+                android:id="@+id/jelszo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:ignore="TextContrastCheck"
+                tools:ignore="TextContrastCheck,TouchTargetSizeCheck"
                 tools:targetApi="jelly_bean" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -94,16 +94,16 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        app:layout_constraintVertical_bias=""
+        app:layout_constraintVertical_bias="0.1"
         android:hint="@string/register_telszam"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPassword"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutJelszo"
         tools:layout_editor_absoluteX="0dp">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/Telszam"
+            android:id="@+id/telefonszam"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:ignore="TextContrastCheck"
+            tools:ignore="TextContrastCheck,TouchTargetSizeCheck"
             tools:targetApi="jelly_bean" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -142,6 +142,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="31dp"
         android:layout_marginBottom="172dp"
+        android:minHeight="48dp"
         android:text="@string/szakmunkas_checkbox"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

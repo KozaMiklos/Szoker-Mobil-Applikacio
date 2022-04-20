@@ -18,7 +18,7 @@ import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
 public class Register extends AppCompatActivity {
 
-    TextInputEditText textInputEditTextFullname, textInputEditTextUsername, textInputEditTextPassword, textInputEditTextEmail;
+    TextInputEditText textInputEditTextFullname, textInputEditTextEmail, textInputEditTextLokacio,textInputLayoutJelszo,textInputLayoutTelszam;
     Button registerButton;
     ProgressBar progressBar;
     CheckBox SzakmunkascheckBox;
@@ -29,10 +29,12 @@ public class Register extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register);
 
-        textInputEditTextFullname = findViewById(R.id.fullname);
-        textInputEditTextUsername = findViewById(R.id.username);
-        textInputEditTextPassword = findViewById(R.id.password);
+        textInputEditTextFullname = findViewById(R.id.nev);
         textInputEditTextEmail = findViewById(R.id.email);
+        textInputEditTextLokacio = findViewById(R.id.lokacio);
+        textInputLayoutJelszo = findViewById(R.id.jelszo);
+        textInputLayoutTelszam = findViewById(R.id.telefonszam);
+
         registerButton = findViewById(R.id.registerButton);
         progressBar = findViewById(R.id.progress);
         SzakmunkascheckBox = findViewById(R.id.SzakmunkascheckBox);
@@ -41,19 +43,18 @@ public class Register extends AppCompatActivity {
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String fullname, username, password, email, fullname2, username2, password2, email2;
-                fullname = String.valueOf(textInputEditTextFullname.getText());
-                username = String.valueOf(textInputEditTextUsername.getText());
-                password = String.valueOf(textInputEditTextPassword.getText());
-                email = String.valueOf(textInputEditTextEmail.getText());
+                String nev, email, lokacio, jelszo, telefonszam;
 
-                fullname2 = String.valueOf(textInputEditTextFullname.getText());
-                username2 = String.valueOf(textInputEditTextUsername.getText());
-                password2 = String.valueOf(textInputEditTextPassword.getText());
-                email2 = String.valueOf(textInputEditTextEmail.getText());
+                nev = String.valueOf(textInputEditTextFullname.getText());
+                email = String.valueOf(textInputEditTextEmail.getText());
+                lokacio = String.valueOf(textInputEditTextLokacio.getText());
+                jelszo = String.valueOf(textInputLayoutJelszo.getText());
+                telefonszam = String.valueOf(textInputLayoutTelszam.getText());
+
+
 
                 if (SzakmunkascheckBox.isChecked()) {
-                    if (!fullname2.equals("") && !username2.equals("") && !password2.equals("") && !email2.equals("")) {
+                    if (!nev.equals("") && !email.equals("") && !lokacio.equals("") && !jelszo.equals("") && !telefonszam.equals(""))  {
                         progressBar.setVisibility(View.VISIBLE);
                         Handler handler = new Handler(Looper.getMainLooper());
                         handler.post(new Runnable() {
@@ -61,19 +62,21 @@ public class Register extends AppCompatActivity {
                             public void run() {
                                 //Starting Write and Read data with URL
                                 //Creating array for parameters
-                                String[] field = new String[4];
-                                field[0] = "fullname2";
-                                field[1] = "username2";
-                                field[2] = "password2";
-                                field[3] = "email2";
+                                String[] field = new String[5];
+                                field[0] = "nev";
+                                field[1] = "email";
+                                field[2] = "lokacio";
+                                field[3] = "jelszo";
+                                field[4] = "telefonszam";
                                 //Creating array for data
-                                String[] data = new String[4];
-                                data[0] = fullname2;
-                                data[1] = username2;
-                                data[2] = password2;
-                                data[3] = email2;
+                                String[] data = new String[5];
+                                data[0] = nev;
+                                data[1] = email;
+                                data[2] = lokacio;
+                                data[3] = jelszo;
+                                data[4] = telefonszam;
                                 //PutData putData = new PutData("http://localhost/registerlogin/signup.php", "POST", field, data);
-                                PutData putData = new PutData("http://192.168.50.196/reglog/signupSzakmunkas.php", "POST", field, data);
+                                PutData putData = new PutData("http://10.0.14.14/reglog/signupSzakmunkas.php", "POST", field, data);
 
 
                                 if (putData.startPut()) {
@@ -98,7 +101,7 @@ public class Register extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "All fields required!", Toast.LENGTH_SHORT).show();
                     }
                 } else {
-                    if (!fullname.equals("") && !username.equals("") && !password.equals("") && !email.equals("")) {
+                    if (!nev.equals("") && !email.equals("") && !lokacio.equals("") && !jelszo.equals("") && !telefonszam.equals(""))  {
                         progressBar.setVisibility(View.VISIBLE);
                         Handler handler = new Handler(Looper.getMainLooper());
                         handler.post(new Runnable() {
@@ -106,20 +109,22 @@ public class Register extends AppCompatActivity {
                             public void run() {
                                 //Starting Write and Read data with URL
                                 //Creating array for parameters
-                                String[] field = new String[4];
-                                field[0] = "fullname";
-                                field[1] = "username";
-                                field[2] = "password";
-                                field[3] = "email";
+                                String[] field = new String[5];
+                                field[0] = "nev";
+                                field[1] = "email";
+                                field[2] = "lokacio";
+                                field[3] = "jelszo";
+                                field[4] = "telefonszam";
                                 //Creating array for data
-                                String[] data = new String[4];
-                                data[0] = fullname;
-                                data[1] = username;
-                                data[2] = password;
-                                data[3] = email;
+                                String[] data = new String[5];
+                                data[0] = nev;
+                                data[1] = email;
+                                data[2] = lokacio;
+                                data[3] = jelszo;
+                                data[4] = telefonszam;
                                 //PutData putData = new PutData("http://localhost/registerlogin/signup.php", "POST", field, data);
 
-                                PutData putData = new PutData("http://192.168.50.196/reglog/signup.php", "POST", field, data);
+                                PutData putData = new PutData("http://10.0.14.14/reglog/signup.php", "POST", field, data);
 
 
                                 if (putData.startPut()) {
