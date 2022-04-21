@@ -26,7 +26,7 @@ public class MegrendeloLogin extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login);
+        setContentView(R.layout.megrendelologin);
 
 
         editTextTextLoginEmail = findViewById(R.id.emailLogin);
@@ -39,13 +39,13 @@ public class MegrendeloLogin extends AppCompatActivity {
         Loginbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String email, password;
+                String email, jelszo;
 
                 email = String.valueOf(editTextTextLoginEmail.getText());
-                password = String.valueOf(editTextTextloginPassword.getText());
+                jelszo = String.valueOf(editTextTextloginPassword.getText());
 
 
-                if (!email.equals("") && !password.equals("")) {
+                if (!email.equals("") && !jelszo.equals("")) {
                     progressBar.setVisibility(View.VISIBLE);
                     Handler handler = new Handler(Looper.getMainLooper());
                     handler.post(new Runnable() {
@@ -53,20 +53,20 @@ public class MegrendeloLogin extends AppCompatActivity {
                         public void run() {
                             String[] field = new String[2];
                             field[0] = "email";
-                            field[1] = "password";
+                            field[1] = "jelszo";
 
                             String[] data = new String[2];
                             data[0] = email;
-                            data[1] = password;
+                            data[1] = jelszo;
 
-                            PutData putData = new PutData("http://192.168.50.196/reglog/login.php", "POST", field, data);
+                            PutData putData = new PutData("http://10.0.11.114/reglog/login.php", "POST", field, data);
                             if (putData.startPut()) {
                                 if (putData.onComplete()) {
                                     progressBar.setVisibility(View.GONE);
                                     String result = putData.getResult();
                                     if (result.equals("Login Success")) {
                                         Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent(getApplicationContext(), Megrendelok.class);
+                                        Intent intent = new Intent(getApplicationContext(), Szakmunkasok.class);
                                         startActivity(intent);
                                         finish();
 

@@ -39,27 +39,27 @@ public class SzakmunkasLogin extends AppCompatActivity {
         Loginbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String email2, password2;
+                String email, jelszo;
 
-                email2 = String.valueOf(editTextTextLoginEmail.getText());
-                password2 = String.valueOf(editTextTextloginPassword.getText());
+                email = String.valueOf(editTextTextLoginEmail.getText());
+                jelszo = String.valueOf(editTextTextloginPassword.getText());
 
 
-                if (!email2.equals("") && !password2.equals("")) {
+                if (!email.equals("") && !jelszo.equals("")) {
                     progressBar.setVisibility(View.VISIBLE);
                     Handler handler = new Handler(Looper.getMainLooper());
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
                             String[] field = new String[2];
-                            field[0] = "email2";
-                            field[1] = "password2";
+                            field[0] = "email";
+                            field[1] = "jelszo";
 
                             String[] data = new String[2];
-                            data[0] = email2;
-                            data[1] = password2;
+                            data[0] = email;
+                            data[1] = jelszo;
 
-                            PutData putData = new PutData("http://192.168.50.196/reglog/loginSzakmunkas.php", "POST", field, data);
+                            PutData putData = new PutData("http://10.0.11.114/reglog/loginSzakmunkas.php", "POST", field, data);
                             if (putData.startPut()) {
                                 if (putData.onComplete()) {
                                     progressBar.setVisibility(View.GONE);

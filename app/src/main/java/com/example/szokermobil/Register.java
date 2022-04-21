@@ -43,18 +43,19 @@ public class Register extends AppCompatActivity {
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String nev, email, lokacio, jelszo, telefonszam;
+                String nev, lokacio, telefonszam, email, jelszo, lakcim;
 
                 nev = String.valueOf(textInputEditTextFullname.getText());
                 email = String.valueOf(textInputEditTextEmail.getText());
                 lokacio = String.valueOf(textInputEditTextLokacio.getText());
                 jelszo = String.valueOf(textInputLayoutJelszo.getText());
                 telefonszam = String.valueOf(textInputLayoutTelszam.getText());
+                lakcim = String.valueOf(textInputEditTextLokacio.getText());
 
 
 
                 if (SzakmunkascheckBox.isChecked()) {
-                    if (!nev.equals("") && !email.equals("") && !lokacio.equals("") && !jelszo.equals("") && !telefonszam.equals(""))  {
+                    if (!nev.equals("") && !lokacio.equals("") && !telefonszam.equals("") && !email.equals("") && !jelszo.equals(""))  {
                         progressBar.setVisibility(View.VISIBLE);
                         Handler handler = new Handler(Looper.getMainLooper());
                         handler.post(new Runnable() {
@@ -64,19 +65,19 @@ public class Register extends AppCompatActivity {
                                 //Creating array for parameters
                                 String[] field = new String[5];
                                 field[0] = "nev";
-                                field[1] = "email";
-                                field[2] = "lokacio";
-                                field[3] = "jelszo";
-                                field[4] = "telefonszam";
+                                field[1] = "lokacio";
+                                field[2] = "telefonszam";
+                                field[3] = "email";
+                                field[4] = "jelszo";
                                 //Creating array for data
                                 String[] data = new String[5];
                                 data[0] = nev;
-                                data[1] = email;
-                                data[2] = lokacio;
-                                data[3] = jelszo;
-                                data[4] = telefonszam;
+                                data[1] = lokacio;
+                                data[2] = telefonszam;
+                                data[3] = email;
+                                data[4] = jelszo;
                                 //PutData putData = new PutData("http://localhost/registerlogin/signup.php", "POST", field, data);
-                                PutData putData = new PutData("http://10.0.14.14/reglog/signupSzakmunkas.php", "POST", field, data);
+                                PutData putData = new PutData("http://10.0.11.114/reglog/signupSzakmunkas.php", "POST", field, data);
 
 
                                 if (putData.startPut()) {
@@ -101,7 +102,7 @@ public class Register extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "All fields required!", Toast.LENGTH_SHORT).show();
                     }
                 } else {
-                    if (!nev.equals("") && !email.equals("") && !lokacio.equals("") && !jelszo.equals("") && !telefonszam.equals(""))  {
+                    if (!email.equals("") && !jelszo.equals("") && !lakcim.equals("") && !nev.equals("") && !jelszo.equals(""))  {
                         progressBar.setVisibility(View.VISIBLE);
                         Handler handler = new Handler(Looper.getMainLooper());
                         handler.post(new Runnable() {
@@ -110,21 +111,21 @@ public class Register extends AppCompatActivity {
                                 //Starting Write and Read data with URL
                                 //Creating array for parameters
                                 String[] field = new String[5];
-                                field[0] = "nev";
-                                field[1] = "email";
-                                field[2] = "lokacio";
-                                field[3] = "jelszo";
+                                field[0] = "email";
+                                field[1] = "jelszo";
+                                field[2] = "lakcim";
+                                field[3] = "nev";
                                 field[4] = "telefonszam";
                                 //Creating array for data
                                 String[] data = new String[5];
-                                data[0] = nev;
-                                data[1] = email;
-                                data[2] = lokacio;
-                                data[3] = jelszo;
+                                data[0] = email;
+                                data[1] = jelszo;
+                                data[2] = lakcim;
+                                data[3] = nev;
                                 data[4] = telefonszam;
                                 //PutData putData = new PutData("http://localhost/registerlogin/signup.php", "POST", field, data);
 
-                                PutData putData = new PutData("http://10.0.14.14/reglog/signup.php", "POST", field, data);
+                                PutData putData = new PutData("http://10.0.11.114/reglog/signup.php", "POST", field, data);
 
 
                                 if (putData.startPut()) {
@@ -133,7 +134,7 @@ public class Register extends AppCompatActivity {
                                         String result = putData.getResult();
                                         if (result.equals("Sign Up Success")) {
                                             Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
-                                            Intent intent = new Intent(getApplicationContext(), SzakmunkasLogin.class);
+                                            Intent intent = new Intent(getApplicationContext(), MegrendeloLogin.class);
                                             startActivity(intent);
                                             finish();
                                         } else {

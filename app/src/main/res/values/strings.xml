@@ -22,4 +22,5 @@
     <string name="megrendelokTextView">Megrendelők felülete</string>
     <string name="registor_lokacio">Lokáció</string>
     <string name="register_telszam">Telefonszám</string>
+    <string name="textview_loginUtvalaszto">Válassza ki kérem, hogy miként szeretne belépni!</string>
 </resources>
