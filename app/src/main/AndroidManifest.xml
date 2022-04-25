@@ -28,14 +28,15 @@
             android:theme="@style/Theme.Design.Light.NoActionBar"
             tools:ignore="Instantiatable"/>
 
+        <activity android:name=".MegrendeloLogin"
+            android:theme="@style/Theme.Design.Light.NoActionBar"
+            tools:ignore="Instantiatable"/>
+
         <activity android:name=".Login_utvalaszto"
             android:theme="@style/Theme.Design.Light.NoActionBar"
             tools:ignore="Instantiatable" />
 
         <activity android:name=".Register"
-            android:theme="@style/Theme.Design.Light.NoActionBar"/>
-
-        <activity android:name=".MegrendeloLogin"
             android:theme="@style/Theme.Design.Light.NoActionBar"/>
 
         <activity android:name=".Megrendelok"

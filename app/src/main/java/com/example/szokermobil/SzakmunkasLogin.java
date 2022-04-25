@@ -59,7 +59,7 @@ public class SzakmunkasLogin extends AppCompatActivity {
                             data[0] = email;
                             data[1] = jelszo;
 
-                            PutData putData = new PutData("http://10.0.11.114/reglog/loginSzakmunkas.php", "POST", field, data);
+                            PutData putData = new PutData("http://192.168.50.196/reglog/loginSzakmunkas.php", "POST", field, data);
                             if (putData.startPut()) {
                                 if (putData.onComplete()) {
                                     progressBar.setVisibility(View.GONE);

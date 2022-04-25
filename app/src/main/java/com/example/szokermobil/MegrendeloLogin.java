@@ -59,14 +59,14 @@ public class MegrendeloLogin extends AppCompatActivity {
                             data[0] = email;
                             data[1] = jelszo;
 
-                            PutData putData = new PutData("http://10.0.11.114/reglog/login.php", "POST", field, data);
+                            PutData putData = new PutData("http://192.168.50.196/reglog/loginMegrendelo.php", "POST", field, data);
                             if (putData.startPut()) {
                                 if (putData.onComplete()) {
                                     progressBar.setVisibility(View.GONE);
                                     String result = putData.getResult();
                                     if (result.equals("Login Success")) {
                                         Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent(getApplicationContext(), Szakmunkasok.class);
+                                        Intent intent = new Intent(getApplicationContext(), Megrendelok.class);
                                         startActivity(intent);
                                         finish();
 
