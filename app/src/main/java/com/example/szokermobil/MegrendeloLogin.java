@@ -21,7 +21,6 @@ public class MegrendeloLogin extends AppCompatActivity {
     TextInputEditText editTextTextLoginEmail, editTextTextloginPassword;
     ProgressBar progressBar;
     Button Loginbutton;
-    CheckBox SzakmunkasLoginCB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +32,6 @@ public class MegrendeloLogin extends AppCompatActivity {
         editTextTextloginPassword = findViewById(R.id.passwordLogin);
         Loginbutton = findViewById(R.id.Loginbutton);
         progressBar = findViewById(R.id.progressBar);
-        SzakmunkasLoginCB = findViewById(R.id.SzakmunkascheckBox);
 
 
         Loginbutton.setOnClickListener(new View.OnClickListener() {
