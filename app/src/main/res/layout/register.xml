@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Register">
+    tools:context=".Register"
+    android:background="@drawable/bg">
 
 
 
@@ -16,6 +17,7 @@
             android:layout_marginTop="30dp"
             android:layout_marginRight="30dp"
             android:hint="@string/fullname"
+            android:background="@drawable/roundstyle"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -27,7 +29,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:ignore="TextContrastCheck,TouchTargetSizeCheck,TouchTargetSizeCheck"
-                tools:targetApi="jelly_bean" />
+                tools:targetApi="jelly_bean"
+                android:background="@drawable/roundstyle"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -38,16 +41,19 @@
             android:layout_marginRight="30dp"
             android:hint="@string/email"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintVertical_bias="1.755"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutFullname">
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutFullname"
+            >
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:ignore="TextContrastCheck,TouchTargetSizeCheck"
-                tools:targetApi="jelly_bean" />
+                tools:targetApi="jelly_bean"
+                android:background="@drawable/roundstyle"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -67,7 +73,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:ignore="TextContrastCheck,TouchTargetSizeCheck"
-                tools:targetApi="jelly_bean" />
+                tools:targetApi="jelly_bean"
+                android:background="@drawable/roundstyle"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -85,7 +92,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:ignore="TextContrastCheck,TouchTargetSizeCheck"
-                tools:targetApi="jelly_bean" />
+                tools:targetApi="jelly_bean"
+                android:background="@drawable/roundstyle"/>
         </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -104,7 +112,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:ignore="TextContrastCheck,TouchTargetSizeCheck"
-            tools:targetApi="jelly_bean" />
+            tools:targetApi="jelly_bean"
+            android:background="@drawable/roundstyle"/>
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -119,29 +128,27 @@
             app:layout_constraintTop_toBottomOf="@+id/textInputLayoutTelszam" />
 
 
-
-
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/registerButton"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/roundstyle"
         android:text="@string/register"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/SzakmunkascheckBox"
-        app:layout_constraintVertical_bias="0.451"
+        app:layout_constraintVertical_bias="0.504"
         tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck" />
 
     <CheckBox
         android:id="@+id/SzakmunkascheckBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="31dp"
-        android:layout_marginBottom="172dp"
+        android:layout_marginTop="428dp"
         android:minHeight="48dp"
         android:text="@string/szakmunkas_checkbox"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -149,7 +156,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayoutFullname"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.006" />
 
     <TextView
         android:id="@+id/textView"
